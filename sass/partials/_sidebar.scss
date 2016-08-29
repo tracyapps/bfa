@@ -1,0 +1,96 @@
+.widgetBox,
+.widgetTitle {
+	color: #ebe6d4;
+}
+
+.widgetTitle {
+	padding: 5px 12px 2px 12px;
+}
+
+aside.page-boxes,
+aside.widget-container {
+	.block {
+		margin: 1em 0;
+		padding-bottom: 1.5em;
+		border-bottom: 3px solid $dark-tan;
+
+		h6 {
+			background: $dark-tan;
+			margin: 1em -1.65em 2em -1.2em;
+			padding: 0.5em 1.8em 0.5em 1.5em;
+			position: relative;
+			box-shadow: 0 1px 2px rgba( $black, 0.3 );
+
+
+		/*	&:before {
+				display: block;
+				width: 0.6em;
+				height: 0;
+				position: absolute;
+				bottom: -0.44em;
+				left: -0.6em;
+				content: "";
+				border-bottom: 0.5em solid transparent;
+				border-right: 0.45em solid darken( $dark-tan, 10 );
+			}*/
+
+			&:before {
+				display: block;
+				height: 100%;
+				width: 1px;
+				background: rgba( $black, 0.2 );
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				box-shadow: 1px 0 2px rgba( $black, 0.8 );
+			}
+
+			&:after {
+				display: block;
+				width: 0.6em;
+				height: 0;
+				position: absolute;
+				bottom: -0.44em;
+				right: -0.6em;
+				content: "";
+				border-bottom: 0.5em solid transparent;
+				border-left: 0.45em solid darken( $dark-tan, 10 );
+			}
+		}
+
+		blockquote {
+			margin: 1em;
+		}
+
+		img {
+			background: $dark-tan;
+			padding: 3px;
+			box-shadow: 0 0 3px $light-tan;
+		}
+
+		.author {
+			padding-left: 55px;
+		}
+
+		@media screen and ( max-width: 810px ) {
+			h6 {
+				margin: 0.5em 0;
+
+				&:before,
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+#mc_signup_form {
+	background: url('../images/mailchimpBG.jpg') no-repeat 40px 130px;
+}
+

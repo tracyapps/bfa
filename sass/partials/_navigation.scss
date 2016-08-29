@@ -1,0 +1,112 @@
+nav.main-navigation {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	min-height: 3em;
+	//line-height: 3.55em;
+	background: rgba( $tan, 0.85 );
+	font-size: 1.1rem;
+	z-index: 10;
+	border-bottom: 1px solid rgba( $dark, 0.4 );
+	border-top: 1px solid rgba( $offwhite, 0.4 );
+	box-shadow: 0 1px 3px rgba( $black, 0.7 );
+
+	ul {
+		display: block;
+		margin: 0;
+		text-align: center;
+		padding: 0;
+
+		li {
+			padding: 0;
+			margin: 0;
+		}
+
+		a,
+		a:visited {
+			color: $white;
+			text-shadow: 0 1px rgba( $black, 0.8 );
+			padding: 1.15em 0.7em;
+			margin: 0;
+			text-decoration: none;
+			display: inline-block;
+			border-radius: $rounded-corners;
+			@include transition(all 500ms ease-out);
+
+			&:hover {
+				background: rgba( $dark, 0.5 );
+				color: $white;
+			}
+		}
+	}
+
+	.current_page_item {
+		a,
+		a:visited,
+		a:hover,
+		a:visited:hover {
+			background: rgba( darken( $blue, 15 ), 0.7 );
+			color: lighten( $blue, 50 );
+		}
+	}
+	.current_page_ancestor {
+		a,
+		a:visited {
+			background: rgba( darken( $blue, 15 ), 0.4 );
+			color: rgba( lighten( $blue, 65 ), 0.8 );
+		}
+	}
+}
+
+
+.pageSubNavContainer {
+	font-size: 1rem;
+	//line-height: 3em;
+
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		text-align: center;
+	}
+
+	ul {
+		display: block;
+		background: rgba( darken( $tan, 10 ), 0.5);
+		overflow: hidden;
+	}
+
+	li {
+		display: inline;
+	}
+
+	a,
+	a:visited {
+		padding: 0.7em;
+		color: $white;
+		text-decoration: none;
+		border-radius: $rounded-corners;
+		display: inline-block;
+		@include transition(all 500ms ease-out);
+
+		&:hover,
+		&:focus {
+			color: $white;
+			background: rgba( $dark, 0.6 );
+		}
+
+	}
+
+	.current_page_item {
+		a,
+		a:visited,
+		a:hover,
+		a:visited:hover {
+			background: rgba( darken( $blue, 15 ), 0.7 );
+			color: lighten( $blue, 50 );
+		}
+	}
+}
+

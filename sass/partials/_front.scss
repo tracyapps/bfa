@@ -1,0 +1,61 @@
+.homepageNews {
+	background: #625b49;
+	background: rgba(98, 91, 73, 0.45);
+	color: #fff;
+	line-height: 1.3em;
+	padding: 10px 15px;
+	text-shadow: 0px -1px 0px #141414;
+	filter: dropshadow(color=#141414, offx=0, offy=-1);
+}
+
+.homepageNews h5 {
+	color: #fff;
+}
+
+#rightZone .homepageNews li {
+	list-style-type: square;
+	padding: 4px 0px 7px 3px;
+	margin-left: 14px;
+}
+
+.homepageFeatured {
+	margin: 15px 10px;
+	padding: 5px 10px;
+	color: #ebe6d4;
+	background: #645d4b;
+	background: rgba(80, 76, 64, 0.4);
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+	text-shadow: 0px -1px 0px #141414;
+	filter: dropshadow(color=#141414, offx=0, offy=-1);
+}
+
+.homepageFeatured h5 {
+	color: #fff;
+	text-shadow: 0px -1px 0px #141414;
+	filter: dropshadow(color=#141414, offx=0, offy=-1);
+}
+
+.homepageIntroBox {
+	background: #ddd7c5;
+	background: rgba(98, 91, 73, 0.05);
+	padding: 10px 15px;
+	font-size: 1.1em;
+	line-height: 1.4em;
+	-webkit-box-shadow: 0px 0px 3px #afa894;
+	-moz-box-shadow: 0px 0px 3px #afa894;
+	box-shadow: 0px 0px 3px #afa894;
+}
+
+.homepageIntroBox h5 {
+}
+
+#fbbox {
+	clear: both;
+	background: #fff;
+	width: 189px;
+	margin: 25px auto 15px auto;
+}

@@ -1,0 +1,98 @@
+/**
+ * Compass mixins not present in bourbon
+ */
+/**
+ * Mixins lost from Compass => Bourbon transition
+ */
+@mixin legacy-pie-clearfix {
+	&:after {
+		content: " ";
+		display: block;
+		height: 0;
+		clear: both;
+		overflow: hidden;
+		visibility: hidden;
+	}
+}
+
+@mixin opacity($opacity) {
+	@if $opacity == 1 {
+		filter: unquote("progid:DXImageTransform.Microsoft.Alpha(enabled=false)");
+	} @else {
+		filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+	}
+	opacity: $opacity;
+}
+
+@mixin single-transition($property: all, $duration: 0.5s, $function: null, $delay: null) {
+	@include transition($property $duration $function $delay);
+}
+
+@mixin border-radius($radius: 5px) {
+	@include prefixer(border-radius, $radius, webkit moz spec);
+}
+
+@mixin text-shadow($shadow) {
+	text-shadow: $shadow;
+}
+
+@mixin rotate($amount) {
+	@include transform(rotate($amount));
+}
+
+@mixin box-shadow($value) {
+	@include prefixer(box-shadow, $value, webkit moz ms o spec);
+}
+
+@function image-url($imagename) {
+	@return url("../images/#{$imagename}");
+}
+
+@mixin link-hover {
+	&:active,
+	&:hover,
+	&:focus {
+		@content;
+	}
+}
+
+@mixin inverse-text {
+	color: $offwhite;
+	text-shadow: 1px 1px 0 rgba( $black, 0.7 );
+	a:not(.button),
+	a:visited:not(.button) {
+		color: lighten( $med-green, 20 );
+
+		&:hover {
+			color: lighten( $blue, 35 );
+		}
+	}
+}
+
+@mixin button($color: $med-green, $text: $white) {
+	@include linear-gradient( darken( $color, 2 ), darken( $color, 5 ) );
+	padding: 0.7em 1.5em;
+	text-align: center;
+	font-family: $sans;
+	border-radius: $rounded-corners;
+	color: $text;
+	display: inline-block;
+	border: 1px solid darken($color, 10);
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.63);
+	box-shadow: 0 0 3px transparentize($color, 0.5),
+				inset 0 0.5em 3.3em rgba( darken( $color, 40 ), 0);
+	@include transform( translate( 0, 0 ) );
+	@include transition(all 500ms ease-out);
+
+	&:hover,
+	&:focus {
+		border: 1px solid darken($color, 15);
+		box-shadow: 0 0 3px transparentize($color, 0.5),
+				inset 0 0.5em 3.3em rgba( darken( $color, 40 ), 0.3 );
+		@include transform( translate( 1px, 1px ) );
+	}
+
+	&:active {
+		@include transform(translateY(5px) translateX(5px));
+	}
+}

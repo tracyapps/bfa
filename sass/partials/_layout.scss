@@ -1,0 +1,41 @@
+main.main-content {
+	z-index: 1;
+	@include display(flex);
+	box-shadow: -1px -1px 3px rgba( $dark, 0.3 );
+	font-size: 1rem;
+
+	> div {
+		@include flex(1);
+	}
+
+	#right-zone {
+		@include linear-gradient(to right, darken( $tan, 8 ), $tan);
+		box-shadow: inset 2px 0 5px rgba( $dark, 0.85 );
+		padding: 2em 1.5em;
+		@include flex-grow(1);
+
+		@include inverse-text;
+	}
+	#left-zone {
+		@include flex-grow(3);
+		@include linear-gradient(to right, darken( $offwhite, 4 ) 0%, lighten( $offwhite, 5 ) 15%);
+	}
+
+	@media screen and ( max-width: 810px ) {
+		display: block;
+
+		> div {
+			width: 100%;
+			clear: both;
+			display: block;
+		}
+
+	}
+}
+
+.container {
+	width: 95%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0;
+}

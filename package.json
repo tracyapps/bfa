@@ -1,0 +1,16 @@
+{
+  "name": "bfa",
+  "version": "0.1.0",
+  "devDependencies": {
+    "bourbon": "^4.2.7",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1",
+    "livereload": "^0.5.0",
+    "load-grunt-tasks": "^3.5.2",
+    "node-bourbon": "^4.2.8"
+  }
+}

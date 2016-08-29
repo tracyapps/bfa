@@ -1,0 +1,122 @@
+.page-title {
+	margin-bottom: 10px;
+}
+
+.pageintro {
+	font-size: 1.3em;
+	line-height: 1.4em;
+	display: block;
+	margin: 3px 0px 15px 0px;
+}
+
+.book-row {
+	margin: 7px 0 12px 0;
+	padding: 2.3em 1.5em;
+	background: rgba( lighten( $offwhite, 10 ), 0.8 );
+	clear: both;
+	display: block;
+	border-radius: $rounded-corners;
+	box-shadow: 1px 1px 1px rgba( $black, 0.2 );
+
+	.book-sub-title {
+		font-weight: normal;
+		margin: 0.2em 0;
+	}
+
+	img.book-thumbnail {
+		max-width: 200px;
+		height: auto;
+	}
+
+	.author {
+		font-style: italic;
+	}
+	.banner {
+		@include linear-gradient(50deg, $med-green 0%, lighten( $med-green, 10 ) 50%,  lighten( $med-green, 5 ) 100% );
+		color: $white;
+		font-weight: bold;
+		padding: 0.9em 2em;
+		width: 96%;
+		text-shadow: -1px -1px 1px darken( $green, 8 );
+		display: block;
+		position: relative;
+		margin: 0 0 0 -2em;
+
+		&:before {
+			display: block;
+			width: 0.6em;
+			height: 0;
+			position: absolute;
+			bottom: -0.44em;
+			left: -0.6em;
+			content: "";
+			border-bottom: 0.5em solid transparent;
+			border-right: 0.45em solid darken( $med-green, 10 );
+		}
+	}
+
+	.order {
+		font-size: 1.4em;
+		margin-top: 1em;
+		clear: both;
+		background: rgba( $blue, 0.8 );
+		border: 1px solid rgba( darken( $green, 20 ), 0.6 );
+		color: $white;
+		border-radius: $rounded-corners;
+		display: block;
+		text-align: center;
+		@include display(flex);
+		@include align-items(center);
+		@media screen and ( max-width: 810px ) {
+			display: inline-block;
+			margin: 1em auto;
+		}
+
+		.price {
+			display: inline-block;
+			padding: 0.1em 0.5em;
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.63);
+			font-weight: bold;
+			line-height: 1.4em;
+		}
+	}
+	blockquote {
+		border-left: 5px solid rgba( $blue, 0.3 );
+		color: lighten( $blue, 20 );
+		font-size: 1.3em;
+		margin: 0 0 0 1.2em;
+		padding: 0 0 0 1.3em;
+		line-height: 1.3em;
+
+		p {
+			margin: 1em 0;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+			font-size: 1rem;
+			line-height: 1.2em;
+		}
+		p:first-child {
+			margin-top: 0;
+			font-size: 1.3em;
+			line-height: 1.3em;
+		}
+
+	}
+	footer.book-footer {
+		@include display(flex);
+		@include align-items(flex-start);
+		margin-top: 2em;
+
+		@media screen and ( max-width: 810px ) {
+			display: block;
+		}
+	}
+}
+
+.resource-row {
+	padding: 1em 2em;
+}
+
+
