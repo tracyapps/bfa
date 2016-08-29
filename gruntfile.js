@@ -20,13 +20,17 @@ module.exports = function(grunt) {
 			files: "**/*.php"
 		},
 		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
-			build: {
-				src: 'src/<%= pkg.name %>.js',
-				dest: 'build/<%= pkg.name %>.min.js'
+			all: {
+				files: [{
+					'js/all.min.js': ['js/main.js', 'js/plugins/*.js']
+				}]
 			}
+		},
+		concat: {
+			theme: {
+				src: ['js/plugins/*.js', 'js/main.js'],
+				dest: 'js/all.js',
+			},
 		},
 		sass: {
 			dist: {

@@ -47,7 +47,8 @@
 					</div><!--/logo-->
 
 					<nav class="main-navigation">
-						<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
+
+						<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container_class' => 'menu-header drawer', 'theme_location' => 'primary', 'depth' => 1 ) ); ?>
 					</nav>
 				</div><!--/featured-image-->
 			</header>
