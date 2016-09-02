@@ -16,13 +16,13 @@
 
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
-	<div id="post-0" class="post error404 not-found">
+	<article id="post-0" class="post error404 not-found">
 		<h4 class="entry-title"><?php _e( 'Not Found', 'twentyten' ); ?></h4>
 		<div class="entry-content">
 			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyten' ); ?></p>
 			<?php get_search_form(); ?>
 		</div><!-- .entry-content -->
-	</div><!-- #post-0 -->
+	</article><!-- #post-0 -->
 <?php endif; ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
@@ -31,7 +31,7 @@
 <?php /* category page */ ?>
 
 	<?php if ( is_category() || is_page('news-events') ) : ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
 
 		<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
@@ -45,29 +45,19 @@
 		<?php endif; ?>
 
 			<div class="entry-utility">
-				<?php
-					$tags_list = get_the_tag_list( '', ', ' );
-					if ( $tags_list ):
-				?>
-					<span class="tag-links">
-						<span class="entry-utility-prep entry-utility-prep-tag-links"><?php printf( __('Tagged %s', 'twentyten'), '</span> ' . $tags_list ); ?>
-					</span>
-					<span class="meta-sep">|</span>
-				<?php endif; ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				<?php bfa_posted_in(); ?>
 			</div><!-- .entry-utility -->
-		</div><!-- #post-## -->
+		</article><!-- #post-## -->
 
 
 <?php /* How to display all other posts. */ ?>
 
 	<?php else : ?>
-		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
 
 			<div class="entry-meta">
-				<?php twentyten_posted_on(); ?>
+				<?php bfa_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
@@ -82,25 +72,9 @@
 	<?php endif; ?>
 
 			<div class="entry-utility">
-				<?php if ( count( get_the_category() ) ) : ?>
-					<span class="cat-links">
-						<span class="entry-utility-prep entry-utility-prep-cat-links"><?php printf( __('Posted in %s', 'twentyten' ), '</span> ' . get_the_category_list( ', ' ) ); ?>
-					</span>
-					<span class="meta-sep">|</span>
-				<?php endif; ?>
-				<?php
-					$tags_list = get_the_tag_list( '', ', ' );
-					if ( $tags_list ):
-				?>
-					<span class="tag-links">
-						<span class="entry-utility-prep entry-utility-prep-tag-links"><?php printf( __('Tagged %s', 'twentyten'), '</span> ' . $tags_list ); ?>
-					</span>
-					<span class="meta-sep">|</span>
-				<?php endif; ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				<?php bfa_posted_in(); ?>
 			</div><!-- .entry-utility -->
-		</div><!-- #post-## -->
+		</article><!-- #post-## -->
 
 		<?php comments_template( '', true ); ?>
 

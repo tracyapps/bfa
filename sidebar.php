@@ -63,6 +63,9 @@
 					wp_kses_post( get_sub_field( 'body_text' ) )
 				);
 
+			elseif( get_row_layout() == 'block_widget_area' ) :
+				$widget_area = get_sub_field( 'widget_area' );
+				print_r( $widget_area);
 			endif;
 		endwhile;
 	endif; ?>

@@ -66,7 +66,7 @@ $includes = array(
 	'/inc/filters.php',     // Filters for overriding various WP behavior that doesn't belong elsewhere
 	'/inc/menus.php',       // Define menus and custom menu walkers
 	'/inc/post-types.php',  // Custom post type definitions
-//	'/inc/utilities.php',   // Misc helper functions and conditionals for templates
+	'/inc/utilities.php',   // Misc helper functions and conditionals for templates
 
 
 );

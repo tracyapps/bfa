@@ -26,14 +26,14 @@ input[type="submit"] {
 
 .alignleft {
 	float: left;
-	margin-right: 2em;
+	margin-right: 1em;
 	margin-bottom: 1em;
 
 }
 
 .alignright {
 	float: right;
-	margin-left: 2em;
+	margin-left: 1em;
 	margin-bottom: 1em;
 
 }
@@ -69,10 +69,12 @@ img.aligncenter {
 .wp-caption,
 img {
 	&.alignleft {
-		@include transform( rotate(-3deg) );
+		@include transform( rotate(-2.5deg) translateX( -0.8em ) );
+		max-width: 67%;
 	}
 	&.alignright {
-		@include transform( rotate(3deg) );
+		@include transform( rotate(2.5deg) translateX( 0.8em ) );
+		max-width: 67%;
 	}
 }
 

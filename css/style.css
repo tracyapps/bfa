@@ -446,13 +446,13 @@ input[type="submit"]:active {
 
 .alignleft {
   float: left;
-  margin-right: 2em;
+  margin-right: 1em;
   margin-bottom: 1em;
 }
 
 .alignright {
   float: right;
-  margin-left: 2em;
+  margin-left: 1em;
   margin-bottom: 1em;
 }
 
@@ -486,20 +486,22 @@ img.aligncenter {
 
 .wp-caption.alignleft,
 img.alignleft {
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  transform: rotate(-3deg);
+  -webkit-transform: rotate(-2.5deg) translateX(-0.8em);
+  -moz-transform: rotate(-2.5deg) translateX(-0.8em);
+  -ms-transform: rotate(-2.5deg) translateX(-0.8em);
+  -o-transform: rotate(-2.5deg) translateX(-0.8em);
+  transform: rotate(-2.5deg) translateX(-0.8em);
+  max-width: 67%;
 }
 
 .wp-caption.alignright,
 img.alignright {
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  -o-transform: rotate(3deg);
-  transform: rotate(3deg);
+  -webkit-transform: rotate(2.5deg) translateX(0.8em);
+  -moz-transform: rotate(2.5deg) translateX(0.8em);
+  -ms-transform: rotate(2.5deg) translateX(0.8em);
+  -o-transform: rotate(2.5deg) translateX(0.8em);
+  transform: rotate(2.5deg) translateX(0.8em);
+  max-width: 67%;
 }
 
 .content {
@@ -556,12 +558,12 @@ main.main-content #right-zone {
 
 main.main-content #right-zone a:not(.button),
 main.main-content #right-zone a:visited:not(.button) {
-  color: #92db62;
+  color: #d3e86d;
 }
 
 main.main-content #right-zone a:not(.button):hover,
 main.main-content #right-zone a:visited:not(.button):hover {
-  color: #91d7ff;
+  color: #bde9a0;
 }
 
 main.main-content #left-zone {
@@ -590,6 +592,12 @@ main.main-content #left-zone {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0;
+}
+
+article.post {
+  margin: 2em 0;
+  padding: 1em 0;
+  border-bottom: 1px dotted rgba(98, 91, 73, 0.7);
 }
 
 header {
@@ -648,7 +656,7 @@ header .featured-image {
   #logo h1,
   #logo h2,
   #logo h3 {
-    font-size: 1.9vw;
+    font-size: 1.5vw;
   }
 }
 
@@ -675,10 +683,10 @@ header .featured-image {
 
 @media screen and (min-width: 1110px) {
   #logo h1 {
-    font-size: 4.5vw;
+    font-size: 4vw;
   }
   #logo h1 span.small {
-    font-size: 1.6vw;
+    font-size: 1.4vw;
   }
 }
 
@@ -696,7 +704,7 @@ header .featured-image {
 
 @media screen and (min-width: 1110px) {
   #logo h3 {
-    font-size: 2.3vw;
+    font-size: 2.0vw;
   }
 }
 
@@ -1051,15 +1059,36 @@ footer.site-footer {
 }
 
 aside.page-boxes .block,
-aside.widget-container .block {
+aside.page-boxes .acf-widget-area,
+aside.widget-container .block,
+aside.widget-container .acf-widget-area {
   margin: 1em 0;
   padding-bottom: 1.5em;
   border-bottom: 3px solid #625b49;
 }
 
+aside.page-boxes .block > li,
+aside.page-boxes .acf-widget-area > li,
+aside.widget-container .block > li,
+aside.widget-container .acf-widget-area > li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 aside.page-boxes .block h6,
-aside.widget-container .block h6 {
+aside.page-boxes .block .widgettitle,
+aside.page-boxes .acf-widget-area h6,
+aside.page-boxes .acf-widget-area .widgettitle,
+aside.widget-container .block h6,
+aside.widget-container .block .widgettitle,
+aside.widget-container .acf-widget-area h6,
+aside.widget-container .acf-widget-area .widgettitle {
   background: #625b49;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.2em;
+  font-weight: bold;
   margin: 1em -1.65em 2em -1.2em;
   padding: 0.5em 1.8em 0.5em 1.5em;
   position: relative;
@@ -1078,7 +1107,13 @@ aside.widget-container .block h6 {
 }
 
 aside.page-boxes .block h6:before,
-aside.widget-container .block h6:before {
+aside.page-boxes .block .widgettitle:before,
+aside.page-boxes .acf-widget-area h6:before,
+aside.page-boxes .acf-widget-area .widgettitle:before,
+aside.widget-container .block h6:before,
+aside.widget-container .block .widgettitle:before,
+aside.widget-container .acf-widget-area h6:before,
+aside.widget-container .acf-widget-area .widgettitle:before {
   display: block;
   height: 100%;
   width: 1px;
@@ -1092,7 +1127,13 @@ aside.widget-container .block h6:before {
 }
 
 aside.page-boxes .block h6:after,
-aside.widget-container .block h6:after {
+aside.page-boxes .block .widgettitle:after,
+aside.page-boxes .acf-widget-area h6:after,
+aside.page-boxes .acf-widget-area .widgettitle:after,
+aside.widget-container .block h6:after,
+aside.widget-container .block .widgettitle:after,
+aside.widget-container .acf-widget-area h6:after,
+aside.widget-container .acf-widget-area .widgettitle:after {
   display: block;
   width: 0.6em;
   height: 0;
@@ -1105,30 +1146,42 @@ aside.widget-container .block h6:after {
 }
 
 aside.page-boxes .block blockquote,
-aside.widget-container .block blockquote {
+aside.page-boxes .acf-widget-area blockquote,
+aside.widget-container .block blockquote,
+aside.widget-container .acf-widget-area blockquote {
   margin: 1em;
 }
 
 aside.page-boxes .block img,
-aside.widget-container .block img {
+aside.page-boxes .acf-widget-area img,
+aside.widget-container .block img,
+aside.widget-container .acf-widget-area img {
   background: #625b49;
   padding: 3px;
   box-shadow: 0 0 3px #bcb59d;
 }
 
 aside.page-boxes .block .author,
-aside.widget-container .block .author {
+aside.page-boxes .acf-widget-area .author,
+aside.widget-container .block .author,
+aside.widget-container .acf-widget-area .author {
   padding-left: 55px;
 }
 
 @media screen and (max-width: 810px) {
   aside.page-boxes .block h6,
-  aside.widget-container .block h6 {
+  aside.page-boxes .acf-widget-area h6,
+  aside.widget-container .block h6,
+  aside.widget-container .acf-widget-area h6 {
     margin: 0.5em 0;
   }
   aside.page-boxes .block h6:before, aside.page-boxes .block h6:after,
+  aside.page-boxes .acf-widget-area h6:before,
+  aside.page-boxes .acf-widget-area h6:after,
   aside.widget-container .block h6:before,
-  aside.widget-container .block h6:after {
+  aside.widget-container .block h6:after,
+  aside.widget-container .acf-widget-area h6:before,
+  aside.widget-container .acf-widget-area h6:after {
     display: none;
   }
 }
