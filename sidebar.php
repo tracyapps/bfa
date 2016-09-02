@@ -69,6 +69,10 @@
 			endif;
 		endwhile;
 	endif; ?>
+
+	<?php if( is_archive() || is_single() ) :
+		dynamic_sidebar( 'news-archive-area' );
+	endif; ?>
 </aside>
 
 <aside class="widget-container bottom">
