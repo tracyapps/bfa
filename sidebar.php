@@ -65,7 +65,7 @@
 
 			elseif( get_row_layout() == 'block_widget_area' ) :
 				$widget_area = get_sub_field( 'widget_area' );
-				print_r( $widget_area);
+				echo $widget_area;
 			endif;
 		endwhile;
 	endif; ?>
