@@ -1170,8 +1170,13 @@ aside.widget-container .widgettitle:after {
   border-left: 0.45em solid #454033;
 }
 
-#mc_signup_form {
-  background: url("../images/mailchimpBG.jpg") no-repeat 40px 130px;
+aside.page-boxes .yikes-mailchimp-container,
+aside.widget-container .yikes-mailchimp-container {
+  margin: 0 -1.5em;
+  padding: 0 1.5em;
+  background-image: url("images/airmail-2.png");
+  background-position: 110% 102%;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=style.css.map */

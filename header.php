@@ -42,7 +42,7 @@
 						<a href="<?php bloginfo( 'home' ); ?>">
 						<h2>VIRGINIA BELL and DAVID TROXEL's</h2>
 						<h1>Best Friends<span class="small">&trade; </span>approach</h1>
-						<h3>to Alzheimer's care</h3>
+						<h3>to Alzheimer's and Dementia Care</h3>
 						</a>
 					</div><!--/logo-->
 

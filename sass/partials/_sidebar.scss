@@ -90,12 +90,17 @@ aside.widget-container {
 			border-left: 0.45em solid darken( $dark-tan, 10 );
 		}
 	}
+
+	.yikes-mailchimp-container {
+		margin: 0 -1.5em;
+		padding: 0 1.5em;
+		background: {
+			image: url( 'images/airmail-2.png' );
+			position: 110% 102%;
+			repeat: no-repeat;
+		}
+	}
 }
 
 
-
-
-#mc_signup_form {
-	background: url('../images/mailchimpBG.jpg') no-repeat 40px 130px;
-}
 
