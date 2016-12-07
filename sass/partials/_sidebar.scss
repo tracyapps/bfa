@@ -32,6 +32,11 @@ aside.widget-container {
 			margin-right: -2em;
 			margin-left: 0;
 			max-width: 50%;
+
+			&.alignleft {
+				margin-right: 0;
+				margin-left: -1em;
+			}
 		}
 
 		.author {

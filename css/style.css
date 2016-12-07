@@ -1095,6 +1095,14 @@ aside.widget-container .acf-widget-area img {
   max-width: 50%;
 }
 
+aside.page-boxes .block img.alignleft,
+aside.page-boxes .acf-widget-area img.alignleft,
+aside.widget-container .block img.alignleft,
+aside.widget-container .acf-widget-area img.alignleft {
+  margin-right: 0;
+  margin-left: -1em;
+}
+
 aside.page-boxes .block .author,
 aside.page-boxes .acf-widget-area .author,
 aside.widget-container .block .author,
