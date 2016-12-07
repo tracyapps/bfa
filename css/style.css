@@ -1090,6 +1090,9 @@ aside.widget-container .acf-widget-area img {
   background: #625b49;
   padding: 3px;
   box-shadow: 0 0 3px #bcb59d;
+  margin-right: -2em;
+  margin-left: 0;
+  max-width: 50%;
 }
 
 aside.page-boxes .block .author,
