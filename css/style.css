@@ -1066,11 +1066,49 @@ section.next-steps-area h3 {
   line-height: 1.2;
 }
 
+section.next-steps-area .nsa-items-container {
+  display: flex;
+  width: 100%;
+}
+
+@media screen and (max-width: 980px) {
+  section.next-steps-area .nsa-items-container {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.next-steps-area .nsa-items-container {
+    display: block;
+  }
+}
+
 section.next-steps-area .nsa-item {
+  flex: 1;
   background: rgba(233, 230, 216, 0.9);
   padding: 2em;
   border: 1px solid #e9e6d8;
   box-shadow: 1px 1px 7px rgba(37, 36, 34, 0.3);
+  overflow: hidden;
+  min-width: 240px;
+}
+
+section.next-steps-area .nsa-item .featured-image {
+  max-width: 400px;
+}
+
+section.next-steps-area .nsa-item .featured-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 3px solid rgba(242, 240, 233, 0.8);
+}
+
+section.next-steps-area .nsa-item.feature-or-testimonial .featured-image {
+  width: 50%;
+  float: left;
+  padding-right: 10px;
+  margin: 0.5em 0 0.25em -1em;
 }
 
 .widgetBox,

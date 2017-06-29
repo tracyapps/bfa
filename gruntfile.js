@@ -17,7 +17,11 @@ module.exports = function(grunt) {
 				files: ['js/plugins.js', 'js/plugins/**/*.js', 'js/main.js'],
 				tasks: ['uglify']
 			},
-			files: "**/*.php"
+			files: [
+				'**/*.php',
+				'css/*.css',
+				'js/all.js'
+			]
 		},
 		uglify: {
 			all: {

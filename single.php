@@ -68,9 +68,57 @@ get_header(); ?>
 
 								elseif( get_row_layout() == 'nsa_item_link' ) :
 
+									echo '<div class="nsa-item external-link">';
+										if( get_sub_field( 'nsa_item_link_intro' ) ) :
+											echo '<div class="intro-paragraph">' . wp_kses_post( get_sub_field( 'nsa_item_link_intro' ) ) . '</div>';
+										endif;
+
+										echo '<div class="action-button"><a class="button" href="' . esc_url( get_sub_field( 'nsa_item_link_url' ) ) . '">' . esc_html( get_sub_field( 'nsa_item_link_button_text' ) ) . '</a></div>';
+									echo '</div>';
 
 								elseif( get_row_layout() == 'nsa_item_cpt' ) :
+									global $post;
 
+									$post_id = get_sub_field( 'nsa_item_cpt_id' );
+									$the_post = get_post( $post_id );
+									$post = $the_post;
+
+									setup_postdata( $post );
+
+									echo '<div class="nsa-item feature-or-testimonial">';
+
+									//print_r( $post );
+									if( $post->post_type == 'feature' ) :
+
+										if( get_field( 'featured_resource_url' ) ) {
+											echo '<a href="' . esc_url( get_field( 'featured_resource_url' ) ) . '">';
+											the_title( '<h6>', ' &raquo;</h6>' );
+											echo ' </a>';
+										} else {
+											the_title( '<h6>', '</h6>' );
+										}
+
+										if ( has_post_thumbnail() ) {
+											echo '<div class="featured-image">';
+											the_post_thumbnail();
+											echo '</div>';
+										} else {}
+
+										the_content();
+
+									elseif( $post->post_type == 'testimonial' ) :
+										if ( has_post_thumbnail() ) {
+											echo '<div class="featured-image">';
+											the_post_thumbnail();
+											echo '</div>';
+										} else {}
+
+										the_content();
+									endif;
+
+									echo '</div>';
+
+									wp_reset_postdata();
 
 								elseif( get_row_layout() == 'nsa_item_freeform' ) :
 
