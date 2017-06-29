@@ -12,27 +12,84 @@ get_header(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<div class="entry-meta">
+					<header class="entry-meta">
 						<?php bfa_posted_on(); ?>
-					</div><!-- .entry-meta -->
+					</header><!-- .entry-meta -->
 
 					<div class="entry-content">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'bfa' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 
-					<div class="entry-utility">
+					<footer class="entry-utility">
 						<?php bfa_posted_in(); ?>
-					</div><!-- .entry-utility -->
+					</footer><!-- .entry-utility -->
 				</article><!-- #post-## -->
-
-				<div id="nav-below" class="navigation">
-					<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'twentyten' ) ); ?></div>
-					<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'twentyten' ) ); ?></div>
-				</div><!-- #nav-below -->
 
 			<?php endwhile; // end of the loop. ?>
 		</div><!--/content-->
+		<?php
+			if( get_field( 'nsa_title' ) != '' ) : ?>
+				<section class="next-steps-area">
+					<div class="content">
+						<h3><?php the_field( 'nsa_title' ) ?></h3>
+						<?php if( have_rows('nsa_items') ) :
+
+							echo '<div class="nsa-items-container">';
+
+							// loop through the rows of data
+							while ( have_rows('nsa_items') ) : the_row();
+
+								if( get_row_layout() == 'nsa_item_post' ) :
+									global $post;
+
+									$post_id = get_sub_field( 'nsa_item_post_id' );
+									$the_post = get_post( $post_id );
+									$post = $the_post;
+
+									setup_postdata( $post );
+
+									echo '<div class="nsa-item post-or-page">';
+									if ( get_sub_field( 'nsa_item_post_image' ) ) {
+										echo '<div class="featured-image"><a href="' . get_the_permalink() . '"><img src="' . get_sub_field( 'nsa_item_post_image' ) . '"></a></div>';
+									} elseif ( has_post_thumbnail() ) {
+										echo '<div class="featured-image"><a href="' . get_the_permalink() . '">';
+										the_post_thumbnail();
+										echo '</a></div>';
+									} else {
+
+									}
+									echo '<a href="' . get_the_permalink() . '">';
+									the_title( '<h5>', '</h5>' );
+									echo '</a>';
+									echo '</div>';
+
+									wp_reset_postdata();
+
+								elseif( get_row_layout() == 'nsa_item_link' ) :
+
+
+								elseif( get_row_layout() == 'nsa_item_cpt' ) :
+
+
+								elseif( get_row_layout() == 'nsa_item_freeform' ) :
+
+									echo '<div class="nsa-item freeform">' . wp_kses_post( get_sub_field( 'nsa_item_freeform_content' ) ) . '</div>';
+
+								endif;
+
+							endwhile;
+
+						endif; ?>
+					</div>
+				</section>
+			<?php endif;
+		?>
+
+		<div id="nav-below" class="navigation">
+			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'bfa' ) ); ?></div>
+			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'bfa' ) ); ?></div>
+		</div><!-- #nav-below -->
 	</div><!--/left-zone-->
 	<div id="right-zone">
 		<?php get_sidebar(); ?>

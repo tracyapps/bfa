@@ -120,3 +120,22 @@
 }
 
 
+section.next-steps-area {
+	margin-top: calc( -2em - 1px );
+	background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMScgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDUgMTAnPgoJPHJlY3Qgd2lkdGg9JzExMCUnIHg9Jy01JScgeT0nLTUlJyBoZWlnaHQ9JzExMCUnIGZpbGw9JyNiY2I1OWQnLz4KCTxsaW5lIHgxPSctMicgeTE9JzEnIHgyPSc3JyB5Mj0nMTAnIHN0cm9rZT0nI2UwZGJjOCcgc3Ryb2tlLXdpZHRoPScuNScvPgoJPGxpbmUgeDE9Jy0yJyB5MT0nNicgeDI9JzcnIHkyPScxNScgc3Ryb2tlPScjZTBkYmM4JyBzdHJva2Utd2lkdGg9Jy41Jy8+Cgk8bGluZSB4MT0nLTInIHkxPSctNCcgeDI9JzcnIHkyPSc1JyBzdHJva2U9JyNlMGRiYzgnIHN0cm9rZS13aWR0aD0nLjUnLz4KPC9zdmc+);
+
+	h3 {
+		display: inline-block;
+		background: rgba( lighten( $offwhite, 5 ), 0.9 );
+		padding: 0.25em 0.5em;
+		margin: 0 auto;
+		line-height: 1.2;
+	}
+
+	.nsa-item {
+		background: rgba( lighten( $offwhite, 5 ), 0.9 );
+		padding: 2em;
+		border: 1px solid lighten( $offwhite, 5 );
+		box-shadow: 1px 1px 7px rgba( $dark, 0.3 );
+	}
+}

@@ -44,4 +44,8 @@ article.post {
 	margin: 2em 0;
 	padding: 1em 0;
 	border-bottom: 1px dotted rgba( $dark-tan, 0.7 );
+
+	.single & {
+		margin-bottom: 0;
+	}
 }
