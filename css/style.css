@@ -1053,6 +1053,48 @@ footer.site-footer {
   padding: 1em 2em;
 }
 
+.author-bio-box {
+  background: rgba(188, 181, 157, 0.4);
+  border: 1px solid #bcb59d;
+  padding: 0.5em;
+  max-width: 650px;
+  margin: 1em auto;
+  border-radius: 5px;
+}
+
+.author-bio-box .container {
+  padding: 1em;
+  width: 100%;
+  background: rgba(242, 240, 233, 0.9);
+  display: flex;
+  align-items: center;
+}
+
+.author-bio-box .container .author-photo {
+  width: 35%;
+  padding-right: 1em;
+}
+
+.author-bio-box .container .author-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.author-bio-box .container .author-bio {
+  width: calc( 100% - 35%);
+}
+
+@media screen and (max-width: 500px) {
+  .author-bio-box .container {
+    flex-direction: column;
+  }
+  .author-bio-box .container .author-photo,
+  .author-bio-box .container .author-bio {
+    width: 100%;
+    padding: 0;
+  }
+}
+
 section.next-steps-area {
   margin-top: calc( -2em - 1px);
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMScgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDUgMTAnPgoJPHJlY3Qgd2lkdGg9JzExMCUnIHg9Jy01JScgeT0nLTUlJyBoZWlnaHQ9JzExMCUnIGZpbGw9JyNiY2I1OWQnLz4KCTxsaW5lIHgxPSctMicgeTE9JzEnIHgyPSc3JyB5Mj0nMTAnIHN0cm9rZT0nI2UwZGJjOCcgc3Ryb2tlLXdpZHRoPScuNScvPgoJPGxpbmUgeDE9Jy0yJyB5MT0nNicgeDI9JzcnIHkyPScxNScgc3Ryb2tlPScjZTBkYmM4JyBzdHJva2Utd2lkdGg9Jy41Jy8+Cgk8bGluZSB4MT0nLTInIHkxPSctNCcgeDI9JzcnIHkyPSc1JyBzdHJva2U9JyNlMGRiYzgnIHN0cm9rZS13aWR0aD0nLjUnLz4KPC9zdmc+);

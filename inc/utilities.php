@@ -62,3 +62,22 @@ if ( ! function_exists( 'bfa_posted_in' ) ) :
 		);
 	}
 endif;
+
+function bfa_display_author_box() {
+	$output = '';
+
+	if( get_the_author_meta( 'description' ) != '' ) :
+		$output .= '<section class="author-bio-box"><div class="container">';
+
+		$output .= sprintf(
+			'<div class="author-photo">%s</div>
+			<div class="author-bio">%s</div>',
+			get_avatar( get_the_author_meta( 'email' ) , 210 ),
+			nl2br( get_the_author_meta( 'description' ) )
+		);
+
+		$output .= '</div></section>';
+	endif;
+
+	return $output;
+}
