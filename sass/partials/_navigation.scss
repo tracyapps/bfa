@@ -108,3 +108,24 @@ nav.main-navigation {
 	}
 }
 
+nav.posts-nav {
+	background: $dark-tan;
+	display: flex;
+	@include inverse-text;
+
+	> div {
+		width: 50%;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		&.right {
+			text-align: right;
+			border-left: 1px dotted $light-tan;
+		}
+	}
+
+	a {
+		padding: 0.5em 0.25em;
+		display: inline-block;
+	}
+}

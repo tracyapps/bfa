@@ -67,7 +67,7 @@ function bfa_display_author_box() {
 	$output = '';
 
 	if( get_the_author_meta( 'description' ) != '' ) :
-		$output .= '<section class="author-bio-box"><div class="container">';
+		$output .= '<hr /><section class="author-bio-box"><h6>About the author</h6><div class="container">';
 
 		$output .= sprintf(
 			'<div class="author-photo">%s</div>

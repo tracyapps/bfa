@@ -22,9 +22,7 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-utility">
-						<?php //bfa_posted_in();
-						echo bfa_display_author_box();
-						?>
+						<?php echo bfa_display_author_box(); ?>
 					</footer><!-- .entry-utility -->
 				</article><!-- #post-## -->
 
@@ -32,10 +30,10 @@ get_header(); ?>
 		</div><!--/content-->
 		<?php get_template_part( 'parts/next-steps-area' ); ?>
 
-		<div id="nav-below" class="navigation">
-			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'bfa' ) ); ?></div>
-			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'bfa' ) ); ?></div>
-		</div><!-- #nav-below -->
+		<nav id="bottom-posts-nav" class="posts-nav">
+			<div class="half left"><?php previous_post_link(); ?></div>
+			<div class="half right"><?php next_post_link(); ?></div>
+		</nav><!-- #nav-below -->
 	</div><!--/left-zone-->
 	<div id="right-zone">
 		<?php get_sidebar(); ?>
