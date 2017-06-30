@@ -1206,6 +1206,10 @@ section.next-steps-area .nsa-item .testimonial-credit p {
   float: right;
 }
 
+section.next-steps-area .nsa-item .testimonial-credit div.addthis_toolbox {
+  display: none !important;
+}
+
 section.next-steps-area .nsa-item > p:last-of-type {
   margin-bottom: 0.5em;
 }
