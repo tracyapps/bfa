@@ -87,7 +87,9 @@ if( get_field( 'nsa_title' ) != '' ) : ?>
 							} else {}
 
 							the_content();
-							echo '<div class="testimonial-credit">' . the_excerpt() . '</div>';
+							echo '<div class="testimonial-credit">';
+							the_excerpt();
+							echo '</div>';
 						endif;
 
 						echo '</div>';
