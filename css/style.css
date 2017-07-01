@@ -525,6 +525,10 @@ hr {
   margin: 2em 0;
 }
 
+svg.icon {
+  fill: rgba(118, 114, 104, 0.4);
+}
+
 main.main-content {
   z-index: 1;
   display: -webkit-box;
@@ -937,11 +941,16 @@ footer.site-footer {
   margin-bottom: 10px;
 }
 
+.page-title .smaller {
+  display: block;
+  font-size: 1rem;
+}
+
 .pageintro {
   font-size: 1.3em;
   line-height: 1.4em;
   display: block;
-  margin: 3px 0px 15px 0px;
+  margin: 3px 0 15px 0;
 }
 
 .book-row {
@@ -1090,6 +1099,21 @@ footer.site-footer {
 
 .resource-row {
   padding: 1em 2em;
+}
+
+.entry-utility .post-meta {
+  overflow: hidden;
+  clear: both;
+  margin: 0 0 0.5em 2em;
+  font-size: 90%;
+}
+
+.entry-utility .post-meta svg {
+  width: 1.5em;
+  height: 1.5em;
+  float: left;
+  clear: left;
+  margin: 0 0.5em 0 0;
 }
 
 .author-bio-box {

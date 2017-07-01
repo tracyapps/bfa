@@ -32,9 +32,9 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'bfa' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
 
-			<div class="entry-meta">
+			<header class="entry-meta">
 				<?php bfa_posted_on(); ?>
-			</div><!-- .entry-meta -->
+			</header><!-- .entry-meta -->
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">
@@ -47,9 +47,9 @@
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
-			<div class="entry-utility">
-				<?php bfa_posted_in(); ?>
-			</div><!-- .entry-utility -->
+			<footer class="entry-utility">
+				<?php bfa_post_meta(); ?>
+			</footer><!-- .entry-utility -->
 		</article><!-- #post-## -->
 
 

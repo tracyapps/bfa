@@ -14,7 +14,9 @@
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer')) : ?><?php endif; ?>
 		</div>
 	</footer>
-
+<div class="hide-this svg-inject">
+	<?php get_template_part( 'images/icons/defs/svg/sprite.defs.svg' ); ?>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>

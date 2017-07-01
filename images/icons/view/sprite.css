@@ -1,0 +1,40 @@
+..icon {
+	background: url("svg/sprite.view-34e2a430.svg") no-repeat;
+}
+
+.icon-calendar {
+	background-position: 0 0;
+}
+
+.icon-calendar-dims {
+	width: 32px;
+	height: 32px;
+}
+
+.icon-folder {
+	background-position: 100% 0;
+}
+
+.icon-folder-dims {
+	width: 32px;
+	height: 32px;
+}
+
+.icon-person {
+	background-position: 0 100%;
+}
+
+.icon-person-dims {
+	width: 32px;
+	height: 32px;
+}
+
+.icon-tags {
+	background-position: 100% 100%;
+}
+
+.icon-tags-dims {
+	width: 32px;
+	height: 32px;
+}
+

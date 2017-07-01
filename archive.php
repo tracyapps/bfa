@@ -7,18 +7,9 @@
 get_header(); ?>
 		<div class="content">
 
-			<h2 class="page-title"><?php
-				if ( is_day() ) :
-					printf( __( 'Daily Archives: %s', 'bfa' ), get_the_date() );
-				elseif ( is_month() ) :
-					printf( __( 'Monthly Archives: %s', 'bfa' ), get_the_date('F Y') );
-				elseif ( is_year() ) :
-					printf( __( 'Yearly Archives: %s', 'bfa' ), get_the_date('Y') );
-				else :
-					_e( 'Blog Archives', 'bfa' );
-				endif;
-				?></h2>
-			<?php get_template_part( 'loop', 'category' ); ?>
+			<?php bfa_the_archive_title( '<h2 class="page-title">', '</h2>', 'smaller'); ?>
+
+			<?php get_template_part( 'loop', 'list' ); ?>
 		</div><!--/content-->
 	</div><!--/left-zone-->
 	<div id="right-zone">

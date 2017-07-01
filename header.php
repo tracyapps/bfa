@@ -27,7 +27,7 @@
 		<div id="left-zone">
 			<header>
 				<?php
-				if ( has_post_thumbnail() ) :
+				if ( has_post_thumbnail() && is_singular() ) :
 					$featured_image_url = get_the_post_thumbnail_url();
 					$div_class = '';
 				else :

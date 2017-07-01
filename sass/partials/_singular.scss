@@ -1,12 +1,17 @@
 .page-title {
 	margin-bottom: 10px;
+
+	.smaller {
+		display: block;
+		font-size: 1rem;
+	}
 }
 
 .pageintro {
 	font-size: 1.3em;
 	line-height: 1.4em;
 	display: block;
-	margin: 3px 0px 15px 0px;
+	margin: 3px 0 15px 0;
 }
 
 .book-row {
@@ -117,6 +122,23 @@
 
 .resource-row {
 	padding: 1em 2em;
+}
+
+.entry-utility {
+	.post-meta {
+		overflow: hidden;
+		clear: both;
+		margin: 0 0 0.5em 2em;
+		font-size: 90%;
+
+		svg {
+			width: 1.5em;
+			height: 1.5em;
+			float: left;
+			clear: left;
+			margin: 0 0.5em 0 0;
+		}
+	}
 }
 
 .author-bio-box {

@@ -1,3 +1,31 @@
+var baseDir  = 'images/svg-uncompressed',   // <-- Set to your SVG base directory
+	svgGlob      = '**/*.svg',       // <-- Glob to match your SVG files
+	outDir       = 'images',     // <-- Main output directory
+	config       = {
+		"dest": "images/icons",
+		"svg": {
+			"xmlDeclaration": false
+		},
+		"mode": {
+			"view": {
+				"common": ".icon",
+				"prefix": ".icon-%s",
+				"render": {
+					"css": true,
+					"scss": true
+				},
+				"example": true
+			},
+			"defs": {
+				"prefix": ".icon-%s",
+				"sprite": "svg/sprite.defs.svg.php",
+				"inline": true,
+				"example": true
+			}
+		}
+	};
+
+
 module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
@@ -20,7 +48,8 @@ module.exports = function(grunt) {
 			files: [
 				'**/*.php',
 				'css/*.css',
-				'js/all.js'
+				'js/all.js',
+				'images/svg-uncompressed/*.svg'
 			]
 		},
 		uglify: {
@@ -61,15 +90,25 @@ module.exports = function(grunt) {
 					'css/print.css': 'sass/print.scss',
 				}
 			}
+		},
+		svg_sprite        : {
+			dist          : {
+				expand    : true,
+				cwd       : baseDir,
+				src       : [svgGlob],
+				dest      : outDir,
+				options   : config
+			}
 		}
 	});
 
 	// Load the plugins
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-svg-sprite');
 
 
 	// Default task(s).
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['watch'], ['svg_sprite']);
 
 };

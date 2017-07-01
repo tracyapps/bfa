@@ -13,7 +13,7 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 					<header class="entry-meta">
-						<?php bfa_posted_on(); ?>
+						<?php //bfa_posted_on(); ?>
 					</header><!-- .entry-meta -->
 
 					<div class="entry-content">
@@ -22,6 +22,8 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 
 					<footer class="entry-utility">
+						<hr />
+						<?php bfa_post_meta(); ?>
 						<?php echo bfa_display_author_box(); ?>
 					</footer><!-- .entry-utility -->
 				</article><!-- #post-## -->
