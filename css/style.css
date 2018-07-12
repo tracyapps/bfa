@@ -1238,6 +1238,80 @@ section.next-steps-area .nsa-item > p:last-of-type {
   margin-bottom: 0.5em;
 }
 
+body.archive article.post,
+body.blog article.post {
+  position: relative;
+  z-index: 10;
+  box-shadow: 1px -1px 0 rgba(118, 114, 104, 0.3);
+}
+
+body.archive article.post.has-post-thumbnail:hover .post-thumbnail-container,
+body.blog article.post.has-post-thumbnail:hover .post-thumbnail-container {
+  opacity: 0.3;
+}
+
+body.archive article.post.has-post-thumbnail:hover .post-thumbnail-container img,
+body.blog article.post.has-post-thumbnail:hover .post-thumbnail-container img {
+  -webkit-filter: saturate(0.5) brightness(1.7);
+  filter: saturate(0.5) brightness(1.7);
+}
+
+body.archive article.post.has-post-thumbnail > *,
+body.blog article.post.has-post-thumbnail > * {
+  z-index: 10;
+}
+
+body.archive article.post.has-post-thumbnail .post-thumbnail-container,
+body.blog article.post.has-post-thumbnail .post-thumbnail-container {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.2;
+  height: 100%;
+  width: 45%;
+  -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+
+body.archive article.post.has-post-thumbnail .post-thumbnail-container:before,
+body.blog article.post.has-post-thumbnail .post-thumbnail-container:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to right, #e0dbc8, rgba(224, 219, 200, 0) 70%);
+  width: 100%;
+  height: 100%;
+}
+
+body.archive article.post.has-post-thumbnail .post-thumbnail-container img,
+body.blog article.post.has-post-thumbnail .post-thumbnail-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  -webkit-filter: saturate(0.3) brightness(1.6);
+  filter: saturate(0.3) brightness(1.6);
+  position: relative;
+  -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+
+body.archive article.post.has-post-thumbnail .entry-content,
+body.blog article.post.has-post-thumbnail .entry-content {
+  padding-right: 20%;
+}
+
+body.archive article.post.has-post-thumbnail .entry-content p,
+body.blog article.post.has-post-thumbnail .entry-content p {
+  background: rgba(233, 230, 216, 0.2);
+}
+
 .widgetBox,
 .widgetTitle {
   color: #ebe6d4;

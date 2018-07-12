@@ -26,31 +26,34 @@
 <?php endif; ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<?php if ( has_post_thumbnail() ) :
+			echo '<div class="post-thumbnail-container">';
+			the_post_thumbnail( 'large' );
+			echo '</div>';
+		endif; ?>
+		<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'bfa' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
 
+		<header class="entry-meta">
+			<?php bfa_posted_on(); ?>
+		</header><!-- .entry-meta -->
 
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h4 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'bfa' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-
-			<header class="entry-meta">
-				<?php bfa_posted_on(); ?>
-			</header><!-- .entry-meta -->
-
-	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
+		<?php if ( is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">
 				<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bfa' ) ); ?>
 			</div><!-- .entry-summary -->
-	<?php else : ?>
+		<?php else : ?>
 			<div class="entry-content">
 				<?php the_excerpt(); ?>
 				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'bfa' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
-	<?php endif; ?>
+		<?php endif; ?>
 
-			<footer class="entry-utility">
-				<?php bfa_post_meta(); ?>
-			</footer><!-- .entry-utility -->
-		</article><!-- #post-## -->
+		<footer class="entry-utility">
+			<?php bfa_post_meta(); ?>
+		</footer><!-- .entry-utility -->
+
+	</article><!-- #post-## -->
 
 
 
@@ -58,8 +61,8 @@
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-				<div id="nav-below" class="navigation">
-					<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'bfa' ) ); ?></div>
-					<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'bfa' ) ); ?></div>
-				</div><!-- #nav-below -->
+	<div id="nav-below" class="navigation">
+		<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&laquo;</span> Older posts', 'bfa' ) ); ?></div>
+		<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&raquo;</span>', 'bfa' ) ); ?></div>
+	</div><!-- #nav-below -->
 <?php endif; ?>
