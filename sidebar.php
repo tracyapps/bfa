@@ -70,7 +70,11 @@
 		endwhile;
 	endif; ?>
 
-	<?php if( is_archive() || is_single() ) :
+	<?php
+	if( is_author() ) :
+		echo bfa_display_author_box();
+	endif;
+	if( is_archive() || is_single() ) :
 		dynamic_sidebar( 'news-archive-area' );
 	endif; ?>
 </aside>

@@ -47,7 +47,13 @@ function bfa_post_meta() {
 		<svg viewBox="0 0 32 32" class="icon-person-dims icon">
 			<use xlink:href="#person"></use>
 		</svg>
-		<a href="<?php printf( esc_attr__( 'View all posts by %s', 'bfa' ), get_the_author() ); ?>"><?php echo get_the_author(); ?></a>
+		<?php
+		printf( '<a class="url fn n" href="%1$s" title="%2$s">%3$s</a>',
+			get_author_posts_url( get_the_author_meta( 'ID' ) ),
+			sprintf( esc_attr__( 'View all posts by %s', 'bfa' ), get_the_author() ),
+			get_the_author()
+		);?>
+
 	</div>
 
 	<div class="post-date post-meta">
