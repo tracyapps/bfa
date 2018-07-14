@@ -9,7 +9,9 @@ get_header(); ?>
 
 			<?php bfa_the_archive_title( '<h2 class="page-title">', '</h2>', 'smaller'); ?>
 
-			<?php get_template_part( 'loop', 'list' ); ?>
+			<section class="archive-list">
+				<?php get_template_part( 'loop', 'list' ); ?>
+			</section>
 		</div><!--/content-->
 	</div><!--/left-zone-->
 	<div id="right-zone">

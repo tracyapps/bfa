@@ -95,7 +95,10 @@ add_filter( 'excerpt_length', 'bfa_excerpt_length' );
  * @return string An ellipsis
  */
 function bfa_auto_excerpt_more( $more ) {
-	return ' &hellip;';
+	return sprintf( '&hellip; <a class="read-more" href="%1$s">%2$s &raquo;</a>',
+		get_permalink( get_the_ID() ),
+		__( 'Read More', 'textdomain' )
+	);
 }
 add_filter( 'excerpt_more', 'bfa_auto_excerpt_more' );
 
@@ -112,6 +115,7 @@ function bfa_custom_excerpt_more( $output ) {
 	return $output . '';
 }
 add_filter( 'get_the_excerpt', 'bfa_custom_excerpt_more' );
+
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.

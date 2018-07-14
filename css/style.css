@@ -1238,31 +1238,31 @@ section.next-steps-area .nsa-item > p:last-of-type {
   margin-bottom: 0.5em;
 }
 
-body.archive article.post,
-body.blog article.post {
+body.archive .archive-list article.post,
+body.blog .archive-list article.post {
   position: relative;
   z-index: 10;
   box-shadow: 1px -1px 0 rgba(118, 114, 104, 0.3);
 }
 
-body.archive article.post.has-post-thumbnail:hover .post-thumbnail-container,
-body.blog article.post.has-post-thumbnail:hover .post-thumbnail-container {
+body.archive .archive-list article.post.has-post-thumbnail:hover .post-thumbnail-container,
+body.blog .archive-list article.post.has-post-thumbnail:hover .post-thumbnail-container {
   opacity: 0.3;
 }
 
-body.archive article.post.has-post-thumbnail:hover .post-thumbnail-container img,
-body.blog article.post.has-post-thumbnail:hover .post-thumbnail-container img {
+body.archive .archive-list article.post.has-post-thumbnail:hover .post-thumbnail-container img,
+body.blog .archive-list article.post.has-post-thumbnail:hover .post-thumbnail-container img {
   -webkit-filter: saturate(0.5) brightness(1.7);
   filter: saturate(0.5) brightness(1.7);
 }
 
-body.archive article.post.has-post-thumbnail > *,
-body.blog article.post.has-post-thumbnail > * {
+body.archive .archive-list article.post.has-post-thumbnail > *,
+body.blog .archive-list article.post.has-post-thumbnail > * {
   z-index: 10;
 }
 
-body.archive article.post.has-post-thumbnail .post-thumbnail-container,
-body.blog article.post.has-post-thumbnail .post-thumbnail-container {
+body.archive .archive-list article.post.has-post-thumbnail .post-thumbnail-container,
+body.blog .archive-list article.post.has-post-thumbnail .post-thumbnail-container {
   z-index: -1;
   position: absolute;
   bottom: 0;
@@ -1275,8 +1275,8 @@ body.blog article.post.has-post-thumbnail .post-thumbnail-container {
   transition: all 500ms ease-out;
 }
 
-body.archive article.post.has-post-thumbnail .post-thumbnail-container:before,
-body.blog article.post.has-post-thumbnail .post-thumbnail-container:before {
+body.archive .archive-list article.post.has-post-thumbnail .post-thumbnail-container:before,
+body.blog .archive-list article.post.has-post-thumbnail .post-thumbnail-container:before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -1288,8 +1288,8 @@ body.blog article.post.has-post-thumbnail .post-thumbnail-container:before {
   height: 100%;
 }
 
-body.archive article.post.has-post-thumbnail .post-thumbnail-container img,
-body.blog article.post.has-post-thumbnail .post-thumbnail-container img {
+body.archive .archive-list article.post.has-post-thumbnail .post-thumbnail-container img,
+body.blog .archive-list article.post.has-post-thumbnail .post-thumbnail-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -1302,14 +1302,157 @@ body.blog article.post.has-post-thumbnail .post-thumbnail-container img {
   transition: all 500ms ease-out;
 }
 
-body.archive article.post.has-post-thumbnail .entry-content,
-body.blog article.post.has-post-thumbnail .entry-content {
+body.archive .archive-list article.post.has-post-thumbnail .entry-content,
+body.blog .archive-list article.post.has-post-thumbnail .entry-content {
   padding-right: 20%;
 }
 
-body.archive article.post.has-post-thumbnail .entry-content p,
-body.blog article.post.has-post-thumbnail .entry-content p {
+body.archive .archive-list article.post.has-post-thumbnail .entry-content p,
+body.blog .archive-list article.post.has-post-thumbnail .entry-content p {
   background: rgba(233, 230, 216, 0.2);
+}
+
+body.archive .archive-grid,
+body.blog .archive-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body.archive .archive-grid article.post,
+body.blog .archive-grid article.post {
+  width: 48%;
+  position: relative;
+  box-shadow: -1px 1px 2px rgba(37, 36, 34, 0.3);
+  padding: 0 0 1em 0;
+  -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+
+body.archive .archive-grid article.post:hover,
+body.blog .archive-grid article.post:hover {
+  box-shadow: -1px 1px 2px rgba(37, 36, 34, 0.7);
+}
+
+body.archive .archive-grid article.post .post-meta-bar,
+body.blog .archive-grid article.post .post-meta-bar {
+  display: block;
+  font-size: 65%;
+  line-height: 1.1;
+  background: rgba(0, 140, 221, 0.8);
+  padding: 3px;
+}
+
+body.archive .archive-grid article.post .post-meta-bar svg.icon,
+body.blog .archive-grid article.post .post-meta-bar svg.icon {
+  width: 13px;
+  height: 13px;
+  fill: #d3e86d;
+}
+
+body.archive .archive-grid article.post .post-meta-bar a,
+body.blog .archive-grid article.post .post-meta-bar a {
+  color: #e0dbc8;
+  text-shadow: 0 1px 0 rgba(37, 36, 34, 0.8);
+}
+
+body.archive .archive-grid article.post .post-meta-bar a:hover,
+body.blog .archive-grid article.post .post-meta-bar a:hover {
+  color: #e0dbc8;
+}
+
+body.archive .archive-grid article.post .entry-title,
+body.blog .archive-grid article.post .entry-title {
+  margin: 1rem 1rem 0.25rem 1rem;
+}
+
+body.archive .archive-grid article.post.has-post-thumbnail .post-thumbnail-container,
+body.blog .archive-grid article.post.has-post-thumbnail .post-thumbnail-container {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  max-height: 25vh;
+  min-height: 125px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+body.archive .archive-grid article.post.has-post-thumbnail .post-thumbnail-container img,
+body.blog .archive-grid article.post.has-post-thumbnail .post-thumbnail-container img {
+  width: 100%;
+  height: 320px;
+  max-height: 25vh;
+  min-height: 125px;
+  object-fit: cover;
+  -webkit-transition: all 500ms ease-out;
+  -moz-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+
+body.archive .archive-grid article.post.has-post-thumbnail .post-thumbnail-container h4.entry-title-block,
+body.blog .archive-grid article.post.has-post-thumbnail .post-thumbnail-container h4.entry-title-block {
+  position: absolute;
+  z-index: 100;
+  bottom: 1em;
+  left: 0;
+  margin: 0 1em;
+  padding: 5px;
+  border-radius: 4px;
+  background: rgba(37, 36, 34, 0.6);
+  text-shadow: 0 1px 0 rgba(37, 36, 34, 0.8);
+}
+
+body.archive .archive-grid article.post.has-post-thumbnail .post-thumbnail-container h4.entry-title-block a,
+body.blog .archive-grid article.post.has-post-thumbnail .post-thumbnail-container h4.entry-title-block a {
+  color: #fff;
+}
+
+body.archive .archive-grid article.post.has-post-thumbnail .post-thumbnail-container h4.entry-title-block a:hover,
+body.blog .archive-grid article.post.has-post-thumbnail .post-thumbnail-container h4.entry-title-block a:hover {
+  color: #e0dbc8;
+}
+
+body.archive .archive-grid article.post.has-post-thumbnail:hover .post-thumbnail-container img,
+body.blog .archive-grid article.post.has-post-thumbnail:hover .post-thumbnail-container img {
+  width: 110%;
+  margin-left: -5%;
+  max-width: 110%;
+}
+
+body.archive .archive-grid article.post .entry-meta,
+body.blog .archive-grid article.post .entry-meta {
+  font-size: 80%;
+  padding: 0 1rem;
+}
+
+body.archive .archive-grid article.post .read-more,
+body.blog .archive-grid article.post .read-more {
+  display: none;
+}
+
+body.archive .archive-grid article.post .entry-content,
+body.blog .archive-grid article.post .entry-content {
+  position: relative;
+  padding-bottom: 0;
+  -webkit-mask-image: linear-gradient(to top, transparent 5.5em, black 9.3em);
+  mask-image: linear-gradient(to top, transparent 5.5em, black 9.3em);
+  -webkit-mask-mode: luminance;
+  mask-mode: luminance;
+  margin-bottom: -2em;
+  padding: 0 1rem;
+}
+
+body.archive .archive-grid article.post .entry-utility,
+body.blog .archive-grid article.post .entry-utility {
+  text-align: center;
+  margin-top: -7.5em;
+  font-size: 90%;
+}
+
+body.archive .archive-grid article.post .entry-utility .button,
+body.blog .archive-grid article.post .entry-utility .button {
+  padding: 0.35rem 1rem;
 }
 
 .widgetBox,

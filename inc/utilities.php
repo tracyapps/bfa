@@ -107,6 +107,28 @@ function bfa_post_meta() {
 
 }
 
+function bfa_post_meta_bar() {
+	echo '<section class="post-meta-bar">';
+
+	$tag_list = get_the_tag_list( '', ', ' );
+	$cat_list = get_the_category_list( ', ' );
+
+	if( $cat_list ) : ?>
+		<div class="post-categories post-meta">
+			<svg viewBox="0 0 32 32" class="icon-folder-dims icon">
+				<use xlink:href="#folder"></use>
+			</svg>
+			<?php echo $cat_list; ?>
+		</div>
+	<?php endif;
+
+
+
+	echo '</section>';
+
+}
+
+
 
 function bfa_display_author_box() {
 	$output = '';

@@ -14,7 +14,9 @@ get_header(); ?>
 			);
 			$latest_post_query = new WP_Query( $args );
 			?>
-			<?php  get_template_part( 'loop', 'list' ); ?>
+			<section class="archive-grid">
+				<?php  get_template_part( 'loop', 'grid' ); ?>
+			</section>
 		</div><!--/content-->
 	</div><!--/left-zone-->
 	<div id="right-zone">
